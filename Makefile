@@ -10,3 +10,8 @@ wipe:
 	@docker network rm $$(docker network ls -q | grep -v "bridge\|host\|none") 2>/dev/null || true
 	@docker system prune -af --volumes
 	@echo "✅ Docker cleaned successfully!"
+
+
+build:
+	npm --prefix react run build
+	npm --prefix react run deploy
