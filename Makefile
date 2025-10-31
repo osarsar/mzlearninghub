@@ -15,3 +15,4 @@ wipe:
 build:
 	npm --prefix react run build
 	npm --prefix react run deploy
+	@echo "✅ deploy successfully!"
