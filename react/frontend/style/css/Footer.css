@@ -1,0 +1,248 @@
+/* =========================================================
+   Footer.css — MZ Learning Hub
+   Structure + Variables + Accessibilité + Responsive
+   ========================================================= */
+
+/* ---------- Variables globales ---------- */
+:root {
+  /* Couleurs */
+  --clr-bg:        #0d2b45;
+  --clr-bg-soft:   #0f3555;
+  --clr-text:      #f3f4f6;
+  --clr-text-dim:  #cbd5e1;
+  --clr-line:      rgba(255, 255, 255, 0.15);
+  --clr-accent:    #ff7a00;
+  --clr-accent-2:  #ff8a26;
+
+  /* Typo */
+  --ff-base:       Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-12:         0.75rem;
+  --fs-14:         0.875rem;
+  --fs-16:         1rem;
+  --fs-18:         1.125rem;
+
+  /* Espacements (8pt scale) */
+  --sp-4:          0.25rem;
+  --sp-8:          0.5rem;
+  --sp-12:         0.75rem;
+  --sp-16:         1rem;
+  --sp-20:         1.25rem;
+  --sp-24:         1.5rem;
+  --sp-28:         1.75rem;
+  --sp-32:         2rem;
+  --sp-40:         2.5rem;
+  --sp-56:         3.5rem;
+
+  /* Dimensions */
+  --logo-w:        140px;
+  --icon:          24px;
+
+  /* Grid */
+  --max-w:         1200px;
+  --g-gap:         2rem;
+
+  /* Breakpoints */
+  --bp-md:         768px;
+  --bp-lg:         1024px;
+
+  /* Effets */
+  --shadow-sm:     0 1px 2px rgba(0,0,0,0.05);
+  --transition:    180ms ease-in-out;
+}
+
+/* ---------- Préférences d’accessibilité ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* =========================================================
+   COMPOSANT FOOTER
+   ========================================================= */
+
+.footer_all {
+  /* Fond & texte */
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--ff-base);
+
+  /* Layout principal */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--g-gap);
+
+  /* Rythme & conteneur */
+  padding: var(--sp-56) var(--sp-32) var(--sp-24);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Contrainte de largeur max (centrage) */
+.footer_all::before,
+.footer_all::after {
+  content: "";
+  grid-column: 1 / -1;
+}
+.footer_all > * {
+  max-width: var(--max-w);
+}
+.footer_all {
+  justify-items: center;
+}
+.footer_all > * {
+  width: 100%;
+}
+
+/* Colonnes (3 blocs) */
+.footer_col { grid-column: span 4; }
+.footer_all .left   { grid-column: 1 / span 4; background-color: #0d2b45;}
+.footer_all .middle { grid-column: 5 / span 4; }
+.footer_all .right  { grid-column: 9 / span 4; background-color: #0d2b45;}
+
+/* Titres de colonne */
+.footer_col h4 {
+  color: var(--clr-accent);
+  font-size: var(--fs-18);
+  font-weight: 700;
+  margin: 0 0 var(--sp-16);
+}
+
+/* Bloc gauche */
+.footer_logo {
+  width: var(--logo-w);
+  height: auto;
+  display: block;
+  margin-bottom: var(--sp-16);
+}
+
+.footer_about {
+  color: var(--clr-text-dim);
+  font-size: var(--fs-14);
+  line-height: 1.6;
+  margin: 0 0 var(--sp-20);
+}
+
+/* Réseaux sociaux */
+.footer_socials {
+  display: flex;
+  gap: var(--sp-12);
+  align-items: center;
+}
+.footer_socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--icon) + 6px);
+  height: calc(var(--icon) + 6px);
+  border-radius: 999px;
+  background: transparent;
+  outline: none;
+}
+.footer_socials img {
+  width: var(--icon);
+  height: var(--icon);
+  filter: brightness(0.95);
+  transition: transform var(--transition), filter var(--transition), background var(--transition);
+}
+.footer_socials a:hover img,
+.footer_socials a:focus-visible img {
+  transform: translateY(-2px);
+  filter: brightness(1);
+}
+.footer_socials a:focus-visible {
+  box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.25);
+}
+
+/* Bloc milieu (contact) */
+.footer_col p {
+  margin: 0;
+  color: var(--clr-text-dim);
+  font-size: var(--fs-14);
+  line-height: 1.7;
+}
+.footer_col p strong { color: var(--clr-text); }
+
+/* Bloc droite (navigation) */
+.footer_col a {
+  display: block;
+  color: var(--clr-text);
+  font-size: var(--fs-16);
+  text-decoration: none;
+  margin: var(--sp-8) 0;
+  outline: none;
+  transition: color var(--transition), transform var(--transition);
+}
+.footer_col a:hover { color: var(--clr-accent); transform: translateX(2px); }
+.footer_col a:focus-visible {
+  color: var(--clr-accent-2);
+  box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.25);
+  border-radius: 6px;
+}
+
+/* Bas de footer */
+.footer_bottom {
+  grid-column: 1 / -1;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid var(--clr-line);
+  margin-top: var(--sp-24);
+  padding-top: var(--sp-20);
+  font-size: var(--fs-12);
+  color: var(--clr-text-dim);
+}
+.footer_bottom a {
+  color: var(--clr-accent);
+  text-decoration: none;
+  margin-left: 4px;
+}
+.footer_bottom a:hover { text-decoration: underline; }
+
+/* ---------- États (facultatifs) ---------- */
+.footer_all.is-compact {
+  padding-top: var(--sp-40);
+  padding-bottom: var(--sp-16);
+}
+.footer_all.is-light {
+  background: #0f3c66;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .footer_all { gap: 1.5rem; }
+}
+
+@media (max-width: 1024px) {
+  /* 2 colonnes */
+  .footer_all {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .footer_all .left   { grid-column: 1 / span 6; }
+  .footer_all .middle { grid-column: 1 / span 3; }
+  .footer_all .right  { grid-column: 4 / span 3; }
+  .footer_about { max-width: 70ch; }
+}
+
+@media (max-width: 768px) {
+  /* 1 colonne */
+  .footer_all {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: var(--sp-40) var(--sp-20) var(--sp-20);
+  }
+  .footer_col,
+  .footer_all .left,
+  .footer_all .middle,
+  .footer_all .right {
+    grid-column: 1 / -1;
+  }
+  .footer_socials { justify-content: center; }
+  .footer_col a { display: inline-block; }
+}
+
+/* =========================================================
+   RESET LOCAL (dans le footer uniquement)
+   ========================================================= */
+.footer_all img { display: block; }
+.footer_all p { margin: 0; }
+.footer_all *::selection { background: rgba(255, 122, 0, 0.25); color: var(--clr-text); }

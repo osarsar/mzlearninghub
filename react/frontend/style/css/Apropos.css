@@ -1,0 +1,142 @@
+.Apropos_all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 250px;
+    width: 100%;
+}
+
+.Apropos_all .firsts{
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid black;
+}
+
+.Apropos_all .box1 ,.Apropos_all .box2{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 100px;
+}
+
+.Apropos_all .box1 img ,.Apropos_all .box2 img{
+    width: 500px;
+    height: 600px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+.Apropos_all .box1 .title span , .Apropos_all .box2 .title span{
+    font-size: 30px;
+}
+
+.Apropos_all .box1 .title, .Apropos_all .box2 .title{
+    background-color: rgb(10, 0, 114);
+    color: white;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    font-size: 20px;
+    width: 50%;
+}
+
+@media screen and (max-width:1500px) and (min-width:1000px){
+
+    .Apropos_all{
+        top: 200px;
+    }
+
+    .Apropos_all .firsts{
+        width: 800px;
+        height: 400px;
+    }
+
+    .Apropos_all .box1 img, .Apropos_all .box2 img{
+        width: 300px;
+        height: 400px;
+    }
+
+    .Apropos_all .box1 .title , .Apropos_all .box2 .title{
+        font-size: 15px;
+    }
+
+    .Apropos_all .box1 .title span, .Apropos_all .box2 .title span{
+        font-size: 22px;
+    }
+
+}
+
+@media screen and (max-width:1000px) and (min-width:800px){
+    .Apropos_all{
+        top: 150px;
+    }
+
+    .Apropos_all .firsts{
+        width: 600px;
+        height: 300px;
+    }
+
+    .Apropos_all .box1 img, .Apropos_all .box2 img{
+        width: 300px;
+        height: 400px;
+    }
+
+    .Apropos_all .box1 .title, .Apropos_all .box2 .title{
+        font-size: 10px;
+    }
+
+    .Apropos_all .box1 .title span, .Apropos_all .box2 .title span{
+        font-size: 17px;
+    }
+
+}
+
+@media screen and (max-width:800px){
+    .Apropos_all{
+        top: 150px;
+    }
+
+    .Apropos_all .box1, .Apropos_all .box2{
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-150px);
+    }
+    
+
+    .Apropos_all .firsts{
+        width: 350px;
+        height: 170px;
+    }
+
+    .Apropos_all .box1 img, .Apropos_all .box2 img{
+        width: 300px;
+        height: 400px;   
+        border-radius: 10px 10px 0px 0px;
+        z-index: -1;
+    }
+
+    .Apropos_all .box2 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .Apropos_all .box1 .title, .Apropos_all .box2 .title{
+        position: relative;
+        font-size: 10px;
+        width: 300px;
+        border-radius: 0px 0px 10px 10px;
+        bottom: 80px;
+    }
+
+    .Apropos_all .box1 .title span, .Apropos_all .box2 .title span{
+        font-size: 17px;
+    }
+
+}

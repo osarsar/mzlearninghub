@@ -1,0 +1,124 @@
+/* =========================================================
+   Box2.css — Méthodologie sans images
+   ========================================================= */
+:root {
+  --clr-bg: #ffffff;
+  --clr-surface: #f9fafb;
+  --clr-text: #0d2b45;
+  --clr-muted: #64748b;
+  --clr-accent: #ff7a00;
+  --clr-accent-light: #ff944d;
+  --shadow: 0 8px 20px rgba(13, 43, 69, 0.08);
+  --radius: 14px;
+}
+
+/* ---------- Section globale ---------- */
+.methodo_all {
+  background: linear-gradient(180deg, #fff 0%, #f7f9fc 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.methodo_title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: #0d2b45;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.methodo_title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--clr-accent), var(--clr-accent-light));
+  border-radius: 8px;
+  margin: 1rem auto 0;
+}
+
+/* ---------- Grille des étapes ---------- */
+.methodo_steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ---------- Carte étape ---------- */
+.methodo_card {
+  background: var(--clr-surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem 1.8rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+
+}
+
+.methodo_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(13, 43, 69, 0.12);
+}
+
+/* ---------- Numéro étape ---------- */
+.methodo_number {
+  position: absolute;
+  top: -22px;
+  left: 1.5rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-light));
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(255, 122, 0, 0.25);
+}
+
+/* ---------- Contenu ---------- */
+.methodo_text h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0d2b45;
+  margin-bottom: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.methodo_text p {
+  font-size: 0.95rem;
+  color: var(--clr-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .methodo_all {
+    padding: 3rem 1.5rem;
+  }
+
+  .methodo_card {
+    padding: 1.8rem 1.2rem 1.5rem;
+  }
+
+  .methodo_number {
+    top: -18px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .methodo_text h3 {
+    font-size: 1.05rem;
+  }
+
+  .methodo_text p {
+    font-size: 0.9rem;
+  }
+}
